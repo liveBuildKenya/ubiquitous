@@ -5,7 +5,7 @@ namespace AppSeed
     /// <summary>
     /// Base class for entities
     /// </summary>
-    public class BaseEntity
+    public partial class BaseEntity
     {
         /// <summary>
         /// Gets or sets the entity identifier

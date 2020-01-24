@@ -5,7 +5,7 @@ namespace AppDomain.Models
     /// <summary>
     /// Represents a song
     /// </summary>
-    public class Song : BaseEntity
+    public partial class Song : BaseEntity
     {
         /// <summary>
         /// Gets or sets the name

@@ -7,7 +7,7 @@ namespace AppDomain.Models
     /// <summary>
     /// Represents an album
     /// </summary>
-    public class Album : BaseEntity
+    public partial class Album : BaseEntity
     {
         private ICollection<Song> _songs;
 
