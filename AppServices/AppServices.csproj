@@ -2,6 +2,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\AppDomain\AppDomain.csproj" />
+    <ProjectReference Include="..\AppSeed\AppSeed.csproj" />
   </ItemGroup>
 
   <PropertyGroup>
