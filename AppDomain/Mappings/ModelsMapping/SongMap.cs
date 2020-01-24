@@ -17,6 +17,11 @@ namespace AppDomain.Mappings.ModelsMapping
         {
             builder.ToTable(nameof(Song));
             builder.HasKey(s => s.Id);
+
+            builder.HasOne(s => s.Album)
+                .WithMany(a => a.Songs)
+                .HasForeignKey(s => s.AlbumId)
+                .IsRequired();
         }
     }
 }

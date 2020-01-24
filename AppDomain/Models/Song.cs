@@ -36,5 +36,11 @@ namespace AppDomain.Models
         /// Gets or sets the album
         /// </summary>
         public Album Album { get; set; }
+
+        /// <summary>
+        /// Represents an album identifer
+        /// </summary>
+        /// <value></value>
+        public int AlbumId { get; set; }
     }
 }
