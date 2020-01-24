@@ -31,5 +31,10 @@ namespace AppDomain.Models
         /// Gets or sets the price
         /// </summary>
         public decimal Price { get; set; }
+
+        /// <summary>
+        /// Gets or sets the album
+        /// </summary>
+        public Album Album { get; set; }
     }
 }

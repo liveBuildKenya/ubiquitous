@@ -13,7 +13,11 @@ namespace AppDomain.Mappings.ModelsMapping
         public override void Configure(EntityTypeBuilder<Album> builder)
         {
             builder.ToTable(nameof(Song));
-            builder.HasKey(s => s.Id);
+            builder.HasKey(a => a.Id);
+
+            builder.HasMany(a => a.Songs)
+            .WithOne(s => s.Album)
+            .IsRequired();
         }   
     }
 }
