@@ -10,24 +10,42 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using AppApi.Framework.Infrastructure.Extensions;
+using Autofac;
 
 namespace AppApi
 {
     public class Startup
     {
-        public Startup(IConfiguration configuration)
+
+        #region Properties
+
+        /// <summary>
+        /// Gets the configuration root of the application
+        /// </summary>
+        public IConfigurationRoot Configuration { get; }
+
+        #endregion
+
+        #region Ctor
+
+        public Startup(IWebHostEnvironment environment)
         {
-            Configuration = configuration;
+            Configuration = new ConfigurationBuilder()
+                .SetBasePath(environment.ContentRootPath)
+                .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
+                .AddEnvironmentVariables()
+                .Build();
         }
 
-        public IConfiguration Configuration { get; }
+        #endregion
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            services.ConfigureApplicationServices();
         }
-
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
