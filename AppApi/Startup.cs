@@ -52,10 +52,15 @@ namespace AppApi
             services.AddDbContext<ApplicationObjectContext>(options =>
             options.UseSqlServer(Configuration.GetConnectionString("Connection")));
             services.AddScoped(typeof(IRepository<>), typeof(EfRepository<>));
-            services.AddAutoMapper();
+            services.AddAutoMapper(typeof(Startup));
             services.AddControllers();
             services.ConfigureApplicationServices();
             services.ConfigureApplicationFactories();
+            services.AddOptions();
+        }
+
+        public void ConfigureContainer(ContainerBuilder builder)
+        {
         }
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

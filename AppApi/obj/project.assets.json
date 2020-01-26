@@ -8550,7 +8550,7 @@
       "Microsoft.EntityFrameworkCore.Design >= 3.1.1",
       "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 3.1.0",
       "NLog.Web.AspNetCore >= 4.9.0",
-      "NLog.config"
+      "NLog.config >= 4.6.8"
     ]
   },
   "packageFolders": {
@@ -8616,7 +8616,7 @@
           },
           "NLog.config": {
             "target": "Package",
-            "version": "(, )"
+            "version": "[4.6.8, )"
           }
         },
         "imports": [
