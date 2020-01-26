@@ -50,7 +50,7 @@ namespace AppApi
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<ApplicationObjectContext>(options =>
-            options.UseSqlServer(Configuration.GetConnectionString("Connection")));
+            options.UseSqlServer(Configuration.GetConnectionString("AlbumDatabase")));
             services.AddScoped(typeof(IRepository<>), typeof(EfRepository<>));
             services.AddAutoMapper(typeof(Startup));
             services.AddControllers();
