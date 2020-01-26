@@ -106,7 +106,7 @@
           "dependencies": {
             "AutoMapper.Extensions.Microsoft.DependencyInjection": {
               "target": "Package",
-              "version": "(, )"
+              "version": "[7.0.0, )"
             },
             "Autofac.Extensions.DependencyInjection": {
               "target": "Package",
@@ -121,6 +121,14 @@
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
               "version": "[3.1.0, )"
+            },
+            "NLog.Web.AspNetCore": {
+              "target": "Package",
+              "version": "[4.9.0, )"
+            },
+            "NLog.config": {
+              "target": "Package",
+              "version": "(, )"
             }
           },
           "imports": [
