@@ -14,6 +14,10 @@ using AppApi.Framework.Infrastructure.Extensions;
 using Autofac;
 using AppDomain;
 using Microsoft.EntityFrameworkCore;
+using AppDomain.Infrastructure;
+using AppSeed.Infrastructure.Data;
+using AppApi.Extensions;
+using AutoMapper;
 
 namespace AppApi
 {
@@ -47,8 +51,11 @@ namespace AppApi
         {
             services.AddDbContext<ApplicationObjectContext>(options =>
             options.UseSqlServer(Configuration.GetConnectionString("Connection")));
+            services.AddScoped(typeof(IRepository<>), typeof(EfRepository<>));
+            services.AddAutoMapper();
             services.AddControllers();
             services.ConfigureApplicationServices();
+            services.ConfigureApplicationFactories();
         }
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
