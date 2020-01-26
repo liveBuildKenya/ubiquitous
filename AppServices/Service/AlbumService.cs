@@ -4,7 +4,7 @@ using System.Linq;
 using AppDomain.Models;
 using AppSeed.Infrastructure.Data;
 
-namespace AppServices.AlbumService
+namespace AppServices.Service
 {
     public partial class AlbumService : IAlbumService
     {

@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using AppDomain.Models;
 
-namespace AppServices.AlbumService
+namespace AppServices.Service
 {
     /// <summary>
     /// Represent the album service interface
