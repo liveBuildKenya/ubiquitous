@@ -12,6 +12,8 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using AppApi.Framework.Infrastructure.Extensions;
 using Autofac;
+using AppDomain;
+using Microsoft.EntityFrameworkCore;
 
 namespace AppApi
 {
@@ -43,6 +45,8 @@ namespace AppApi
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddDbContext<ApplicationObjectContext>(options =>
+            options.UseSqlServer(Configuration.GetConnectionString("Connection")));
             services.AddControllers();
             services.ConfigureApplicationServices();
         }
